@@ -4,6 +4,10 @@ from src.ingestion.loader import (
     load_all_pdfs
 )
 
+from src.chunking.splitter import (
+    split_documents
+)
+
 
 def main():
     
@@ -17,7 +21,8 @@ def main():
         
         all_documents = load_all_pdfs("data/pdfs")
         
-        # print(f"total de PDFs encontrados: {all_documents}")
+        chunks = split_documents(all_documents)
+        
         print(f"PDFs encontrados: {len(pdf_files)}")
         print(f"total de Document carregados: {len(all_documents)}")
                             
@@ -32,15 +37,33 @@ def main():
         print("\nCONTEÚDO\n")
         print(documents[0].page_content[:1000])
         
-        print(type(documents))
-        print(type(documents[0])) 
+        print("\n")
         
-        print(documents[0].metadata["page"])
-        print(documents[1].metadata["page"])
-        print(documents[2].metadata["page"])
+        print(f"Variável tipo: {type(documents)}")
+        print(f"Possui objetos: {type(documents[0])}") 
         
-        print(all_documents[0].metadata["source"])
-        print(all_documents[-1].metadata["source"])
+        print("\nSEPARAÇÕES\n")
+        
+        print(f"Página: {documents[0].metadata["page"]} do Document")
+        print(f"Página: {documents[1].metadata["page"]} do Document")
+        print(f"Página: {documents[2].metadata["page"]} do Document")
+        
+        print("\n")
+        
+        print(f"Primeiro PDF de all_documents: \n{all_documents[0].metadata["source"]}")
+        print(f"Último PDF de all_documents: \n{all_documents[-1].metadata["source"]}")
+        
+        print("\n")
+        
+        print(f"Documents: {len(all_documents)}")
+        print(f"Chunks: {len(chunks)}")
+        
+        print("\nSEPARAÇÕES\n")
+        print(chunks[0].page_content)
+        
+        print("\nSEPARAÇÕES\n")
+        print(chunks[1].page_content)
+        
         
     except Exception as e:
         print(f"Erro:{e}")
