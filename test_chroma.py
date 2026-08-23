@@ -5,4 +5,5 @@ from src.vectorstore.chroma_store import (
 
 collection = get_collection()
 
-print(collection.name)
+print(f"Nome: {collection.name}")
+print(f"Quantidade de registros: {collection.count()}")
