@@ -20,7 +20,9 @@ response = requests.post(
     json=payload
 )
 
-print("Status:", response.status_code)
+data = response.json()
+
+answer = data["choices"][0]["message"]["content"]
 
 print("\nResposta:")
-print(response.json())
+print(answer)
