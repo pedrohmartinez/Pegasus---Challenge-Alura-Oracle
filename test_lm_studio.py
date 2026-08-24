@@ -1,8 +1,24 @@
 import requests
 
-url = "http://localhost:1234/v1/models"
+url = "http://localhost:1234/v1/chat/completions"
 
-response = requests.get(url)
+payload = {
+    "model": "llama-3.2-1b-instruct",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Explique em uma frase o que é microsserviço."
+        }
+    ],
+    "temperature": 0.2,
+    "max_tokens": 100
+}
+
+
+response = requests.post(
+    url,
+    json=payload
+)
 
 print("Status:", response.status_code)
 
