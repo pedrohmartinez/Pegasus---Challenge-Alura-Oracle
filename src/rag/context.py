@@ -1,10 +1,16 @@
 def build_context(results):
     
-    context = ""
+    context_parts = []
     
-    for result in results:
+    for index, result in enumerate(results, start=1):
         
-        context += result["document"]
-        context += "\n\n"
+        document = result["document"]
         
-    return context
+        chunk = (
+            f"================ CHUNK {index} ================\n\n"
+            f"{document}\n"
+        ) 
+        
+        context_parts.append(chunk)
+        
+    return "\n".join(context_parts)
