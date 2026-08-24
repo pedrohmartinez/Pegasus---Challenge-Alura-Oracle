@@ -4,4 +4,10 @@ results = retrieve(
     "Como funciona a comunicação entre microsserviços?"
 )
 
-print(results.keys())
+print("IDS:")
+print(results["ids"])
+
+print("\n---------------------------------")
+
+print("DISTÂNCIAS:")
+print(results["distances"])
