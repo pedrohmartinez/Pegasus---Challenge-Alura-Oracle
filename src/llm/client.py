@@ -1,0 +1,38 @@
+import os
+from dotenv import load_dotenv
+
+import requests
+
+load_dotenv()
+
+LM_STUDIO_URL = os.getenv("LM_STUDIO_URL")
+MODEL_NAME = os.getenv("MODEL_NAME")
+
+def generate_response(
+    question: str,
+) -> str:
+    
+    payload = {
+        "model": MODEL_NAME,
+        "messages": [
+            {
+                "role": "user",
+                "content": question
+            }
+        ],
+        "temperature": 0.2,
+        "max_tokens": 100
+    }
+    
+    response = requests.post(
+        LM_STUDIO_URL,
+        json=payload
+    )
+    
+    response.raise_for_status()
+    
+    data = response.json()
+    
+    answer = data["choices"][0]["message"]["content"]
+    
+    return answer
