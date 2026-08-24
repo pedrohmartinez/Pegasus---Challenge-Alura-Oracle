@@ -19,4 +19,16 @@ def retrieve(
         n_results=top_k
     )
     
-    return results
+    retrieved_documents = []
+    
+    for i in range(len(results["documents"][0])):
+        
+        document = {
+            "document": results["documents"][0][i],
+            "metadata": results["metadatas"][0][i],
+            "distance": results["distances"][0][i]
+        }
+        
+        retrieved_documents.append(document)
+    
+    return retrieved_documents
