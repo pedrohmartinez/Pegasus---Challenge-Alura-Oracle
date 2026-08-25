@@ -9,7 +9,7 @@ LM_STUDIO_URL = os.getenv("LM_STUDIO_URL")
 MODEL_NAME = os.getenv("MODEL_NAME")
 
 def generate_response(
-    question: str,
+    prompt: str,
 ) -> str:
     
     payload = {
@@ -17,7 +17,7 @@ def generate_response(
         "messages": [
             {
                 "role": "user",
-                "content": question
+                "content": prompt
             }
         ],
         "temperature": 0.2,
