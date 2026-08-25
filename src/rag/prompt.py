@@ -4,16 +4,15 @@ def build_prompt(
 ) -> str:
     
     prompt = f"""
-Você é um asssitente da Santo Pegasus Soluciones.
+Você é um assistente da Santo Pegasus Soluciones.
 
-Responda á pergunta utilizando exclusivamente as
-informações presente no contexto fornecido.
+Responda utilizando exclusivamente as informações
+presentes no contexto.
 
-Se a informação necessária não estiver presente
-no contexto fornecido, responda exatamente:
+Se a resposta não estiver presente no contexto,
+responda exatamente:
 
-"Não encontrei informação suficiente nos
-documentos fornecidos."
+"Não encontrei informação suficiente nos documentos fornecidos."
 
 ================ CONTEXTO ================
 
