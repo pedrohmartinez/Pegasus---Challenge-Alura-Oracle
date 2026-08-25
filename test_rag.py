@@ -5,7 +5,7 @@ from src.rag.prompt import build_prompt
 from src.llm.client import generate_response
 
 question = (
-    "Quais mecanismos de segurança são utilizados na comunicação entre microsserviços?"
+    "Quem é o CEO da Santo Pegasus Soluciones?"
 )
 
 answer = answer_question(

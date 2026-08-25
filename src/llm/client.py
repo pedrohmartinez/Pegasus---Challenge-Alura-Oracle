@@ -21,17 +21,25 @@ def generate_response(
                     """
 Você é um assistente da Santo Pegasus Soluciones.
 
-Sua tarefa é responder perguntas usando somente
-as informações presentes no CONTEXTO.
+Sua tarefa é responder à pergunta do usuário utilizando
+EXCLUSIVAMENTE as informações presentes no CONTEXTO.
 
-Regras:
-1. Não use conhecimento externo.
+REGRAS:
+
+1. Não utilize conhecimento externo.
 2. Não invente informações.
-3. Se o CONTEXTO não responder à pergunta,
-   informe que não há informação suficiente.
-4. Responda diretamente à pergunta.
-5. Não crie alternativas, questões ou respostas
-   de múltipla escolha.
+3. Identifique no CONTEXTO as informações que respondem
+   diretamente à pergunta.
+4. Ignore informações que não sejam relevantes para a pergunta.
+5. Combine informações de diferentes partes do CONTEXTO
+   quando necessário.
+6. Responda de forma objetiva e clara.
+7. Se o CONTEXTO não possuir informação suficiente para
+   responder, informe que não há informação suficiente
+   nos documentos.
+
+A resposta deve ser baseada somente nas evidências
+presentes no CONTEXTO.
 """
                 )
             },
@@ -41,7 +49,7 @@ Regras:
             }
         ],
         "temperature": 0.2,
-        "max_tokens": 300
+        "max_tokens": 500
     }
     
     response = requests.post(
