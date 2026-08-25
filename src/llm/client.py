@@ -14,7 +14,27 @@ def generate_response(
     
     payload = {
         "model": MODEL_NAME,
-        "messages": [
+        "messages" : [
+            {
+                "role": "system",
+                "content": (
+                    """
+Você é um assistente da Santo Pegasus Soluciones.
+
+Sua tarefa é responder perguntas usando somente
+as informações presentes no CONTEXTO.
+
+Regras:
+1. Não use conhecimento externo.
+2. Não invente informações.
+3. Se o CONTEXTO não responder à pergunta,
+   informe que não há informação suficiente.
+4. Responda diretamente à pergunta.
+5. Não crie alternativas, questões ou respostas
+   de múltipla escolha.
+"""
+                )
+            },
             {
                 "role": "user",
                 "content": prompt

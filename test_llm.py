@@ -1,8 +1,25 @@
 from src.llm.client import generate_response
 
-response = generate_response(
-    "Explique em uma frase o que é um microsserviço"
-)
+prompt = """
+Você é um assistente da Santo Pegasus Soluciones.
 
-print("\nResposta:")
+Responda exclusivamente utilizando as informações
+presentes no contexto.
+
+================ CONTEXTO ================
+
+Os domínios da arquitetura se integram exclusivamente
+por meio de APIs ou mensageria.
+
+================ PERGUNTA ================
+
+Como os domínios se integram?
+
+================ RESPOSTA ================
+"""
+
+
+response = generate_response(prompt)
+
+print("\n================ RESPOSTA ================\n")
 print(response)
