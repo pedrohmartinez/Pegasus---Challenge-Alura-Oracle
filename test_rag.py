@@ -5,7 +5,7 @@ from src.rag.prompt import build_prompt
 from src.llm.client import generate_response
 
 question = (
-    "Quem é o CEO da Santo Pegasus Soluciones?"
+    "Como os domínios se integram?"
 )
 
 answer = answer_question(
