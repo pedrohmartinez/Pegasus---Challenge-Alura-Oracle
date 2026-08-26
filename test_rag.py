@@ -1,11 +1,8 @@
 from src.rag.rag import answer_question
 from src.retrieval.retriever import retrieve
-from src.rag.context import build_context
-from src.rag.prompt import build_prompt
-from src.llm.client import generate_response
 
 question = (
-    "Como os domínios se integram?"
+    "Quantos funcionários a empresa possui?"
 )
 
 answer = answer_question(
@@ -19,11 +16,11 @@ for result in results:
     print("DOCUMENTO:")
     print(result["document"])
 
-    print("\nMETADATA:")
-    print(result["metadata"])
+    # print("\nMETADATA:")
+    # print(result["metadata"])
 
-    print("\nDISTANCE:")
-    print(result["distance"])
+    # print("\nDISTANCE:")
+    # print(result["distance"])
 
     print("\n============================================\n")
     
@@ -31,6 +28,9 @@ print("\n================ RESPOSTA ================\n")
 
 print(answer)
 
+print("\n============================================\n")
+
+# Testes padrão
 # Como os domínios se integram?
 # Quem é o CEO da Santo Pegasus Soluciones?
 # Quais mecanismos de segurança são utilizados na comunicação entre microsserviços?
