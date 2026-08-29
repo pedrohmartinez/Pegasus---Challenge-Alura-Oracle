@@ -55,3 +55,6 @@ Benchmark completo(executado):
 | N04 | Endereço da sede               | ❌ FAIL    |
 | C01 | Capital do Brasil              | ✅ PASS    |
 | C02 | Funcionamento do Windows       | ✅ PASS    |
+
+Taxa de sucesso:
+11 / 12 = 91,67%
