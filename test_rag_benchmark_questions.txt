@@ -1,0 +1,38 @@
+TESTES DE RAG
+
+├── Perguntas respondíveis
+│   ├── resposta direta
+│   └── resposta distribuída em chunks (exige síntese)
+│
+├── Perguntas não respondíveis
+│   └── informação inexistente (ou parcialmente relacionada)
+│
+└── Perguntas de controle
+    ├── ambíguas
+    └── fora do domínio
+
+-----------------------------------------------
+1. Perguntas respondíveis:
+
+- Resposta direta:
+R01 | Qual é o principal produto da empresa?
+R02 | Qual é a missão tecnológica da empresa?
+R03 | Quantos funcionários a empresa possui?
+R04 | Quais bancos de dados são utilizados?
+
+- Resposta distribuída em chunks (exige síntese):
+R05 | Como os domínios se integram?
+R06 | Quais mecanismos de segurança são utilizados na comunicação entre microsserviços?
+
+2. Perguntas não respondíveis:
+
+- Informação inexistente (ou parcialmente relacionada):
+N01 | Qual é o salário do CEO?
+N02 | Qual é o faturamento anual da empresa?
+N03 | Quem é o CEO da Santo Pegasus Soluciones?
+N04 | Qual é o endereço físico da sede da empresa?
+
+3. Perguntas de controle:
+
+C01 | Qual é a capital do Brasil?
+C02 | Explique como funciona o sistema operacional Windows.

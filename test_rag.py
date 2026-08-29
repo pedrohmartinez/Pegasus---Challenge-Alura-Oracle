@@ -2,7 +2,7 @@ from src.rag.rag import answer_question
 from src.retrieval.retriever import retrieve
 
 question = (
-    "Quantos funcionários a empresa possui?"
+    "Explique como funciona o Windows."
 )
 
 answer = answer_question(
@@ -19,8 +19,8 @@ for result in results:
     # print("\nMETADATA:")
     # print(result["metadata"])
 
-    # print("\nDISTANCE:")
-    # print(result["distance"])
+    print("\nDISTANCE:")
+    print(result["distance"])
 
     print("\n============================================\n")
     
@@ -29,8 +29,3 @@ print("\n================ RESPOSTA ================\n")
 print(answer)
 
 print("\n============================================\n")
-
-# Testes padrão
-# Como os domínios se integram?
-# Quem é o CEO da Santo Pegasus Soluciones?
-# Quais mecanismos de segurança são utilizados na comunicação entre microsserviços?
