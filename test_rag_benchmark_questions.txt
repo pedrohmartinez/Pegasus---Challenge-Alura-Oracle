@@ -36,3 +36,22 @@ N04 | Qual é o endereço físico da sede da empresa?
 
 C01 | Qual é a capital do Brasil?
 C02 | Explique como funciona o sistema operacional Windows.
+
+-----------------------------------------------------------------
+
+Benchmark completo(executado):
+
+| ID  | Categoria                      | Resultado  |
+| --- | ------------------------------ | ---------- |
+| R01 | Principal produto              | ✅ PASS    |
+| R02 | Missão tecnológica             | ✅ PASS    |
+| R03 | Funcionários                   | ✅ PASS    |
+| R04 | Bancos de dados                | ✅ PASS    |
+| R05 | Integração entre domínios      | ✅ PASS    |
+| R06 | Segurança entre microsserviços | ✅ PASS    |
+| N01 | Salário do CEO                 | ✅ PASS    |
+| N02 | Faturamento anual              | ✅ PASS    |
+| N03 | Quem é o CEO                   | ✅ PASS    |
+| N04 | Endereço da sede               | ❌ FAIL    |
+| C01 | Capital do Brasil              | ✅ PASS    |
+| C02 | Funcionamento do Windows       | ✅ PASS    |
