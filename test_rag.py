@@ -23,6 +23,9 @@ for i, question in enumerate(questions):
     )
     results = retrieve(question)
 
+    print(f"\n================ PERGUNTA {i} ================\n")
+    print(question)
+    
     print("\n================ RETRIEVAL ================\n")
 
     for result in results:
