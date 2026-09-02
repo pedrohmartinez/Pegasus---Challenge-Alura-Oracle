@@ -1,20 +1,29 @@
 from src.rag.rag import answer_question
 from src.retrieval.retriever import retrieve
 
-# Lista das questions do benchmark de testes do RAG
+# Lista das 12 questions do benchmark de testes do RAG
+# questions = [
+#     "Qual é o principal produto da empresa?",
+#     "Qual é a missão tecnológica da empresa?",
+#     "Quantos funcionários a empresa possui?",
+#     "Quais bancos de dados são utilizados?",
+#     "Como os domínios se integram?",
+#     "Quais mecanismos de segurança são utilizados na comunicação entre microsserviços?",
+#     "Qual é o salário do CEO?",
+#     "Qual é o faturamento anual da empresa?",
+#     "Quem é o CEO da Santo Pegasus Soluciones?",
+#     "Qual é o endereço físico da sede da empresa?",
+#     "Qual é a capital do Brasil?",
+#     "Explique como funciona o sistema operacional Windows."
+#     ]
+
 questions = [
-    "Qual é o principal produto da empresa?",
-    "Qual é a missão tecnológica da empresa?",
-    "Quantos funcionários a empresa possui?",
-    "Quais bancos de dados são utilizados?",
-    "Como os domínios se integram?",
-    "Quais mecanismos de segurança são utilizados na comunicação entre microsserviços?",
-    "Qual é o salário do CEO?",
-    "Qual é o faturamento anual da empresa?",
-    "Quem é o CEO da Santo Pegasus Soluciones?",
-    "Qual é o endereço físico da sede da empresa?",
-    "Qual é a capital do Brasil?",
-    "Explique como funciona o sistema operacional Windows."
+    "Qual o telefone da empresa?",
+    "Qual o email do CEO?",
+    "Qual o CPF do fundador?",
+    "Qual o preço do Agendio?",
+    "Qual o endereço completo do escritório?",
+    "Quantos clientes existem atualmente?"
     ]
 
 for i, question in enumerate(questions):
