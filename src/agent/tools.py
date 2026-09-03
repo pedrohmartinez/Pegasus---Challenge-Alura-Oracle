@@ -1,15 +1,16 @@
 from src.retrieval.retriever import retrieve
+from langchain_core.tools import tool
 
-def search_documents(
-    query: str,
-    top_k: int = 3
-):
+@tool
+def search_documents(query: str) -> list:
     """
-    Busca documentos relevantes na base de conhecimento
+    Busca informações relevantes nos documentos corporativos
     da Santo Pegasus Soluciones.
+    Use esta ferramenta quando precisar consultar informações
+    presentes na base documental da empresa.
     """
     
     return retrieve(
         question=query,
-        top_k=top_k
+        top_k=3
     )
