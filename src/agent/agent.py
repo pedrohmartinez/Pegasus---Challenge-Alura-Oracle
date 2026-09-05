@@ -65,23 +65,29 @@ def run_agent(question: str):
    
    while True:
       
-      respose =llm.invoke(messages)
+      response =llm.invoke(messages)
       
-      messages.append(respose)
+      print("\n===== RESPONSE =====")
+      print(response)
+
+      print("\n===== TOOL CALLS =====")
+      print(response.tool_calls)
+      
+      messages.append(response)
       
       # --------------------------------
       # Caso 1: LLM respondeu diretamente
       # --------------------------------
 
-      if not respose.tool_calls:
+      if not response.tool_calls:
          
-         return respose.content
+         return response.content
       
       # --------------------------------
       # Caso 2: LLM solicitou uma Tool
       # --------------------------------
       
-      for tool_call in respose.tool_calls:
+      for tool_call in response.tool_calls:
          
          tool_name = tool_call["name"]
          tool_args = tool_call["args"]
@@ -95,7 +101,7 @@ def run_agent(question: str):
             tool_message = ToolMessage(
                content=json.dumps(
                   tool_result,
-                  ensure_ascii==False
+                  ensure_ascii=False
                ),
                tool_call_id=tool_call_id
             )
